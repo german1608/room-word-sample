@@ -1,5 +1,6 @@
 package com.example.roomwordsample
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -13,5 +14,5 @@ interface WordDao {
     fun deleteAll()
 
     @Query("select * from word_table order by word asc")
-    fun getAllWords(): List<Word>
+    fun getAllWords(): LiveData<List<Word>>
 }
